@@ -204,7 +204,6 @@
     <visual name='hokuyo_visual'>
       <origin xyz="0 0 0" rpy="0 1.5707 0"/>
       <geometry>
-        <!--box size=".1 .1 .1"/-->
         <mesh filename="package://my_robot/meshes/hokuyo.dae"/>
       </geometry>
     </visual>
@@ -216,6 +215,15 @@
     <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
   </joint>
+
+  <joint name="camera_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="camera"/>
+    <child link="camera_link_optical"/>
+  </joint>
+
+  <link name="camera_link_optical">
+  </link>
 
   <!-- Color scheme-->
   <gazebo reference="chassis">
